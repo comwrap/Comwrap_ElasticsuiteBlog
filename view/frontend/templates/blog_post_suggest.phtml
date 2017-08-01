@@ -1,0 +1,13 @@
+<?php /** @var \Comwrap\ElasticsuiteBlog\Block\Post\Suggest */  ?>
+<?php if ($block->canShowBlock()): ?>
+   <div class="search results">
+      <h2><?php echo __('Results in blog posts.')?></h2>
+
+       <ul>
+       <?php foreach ($block->getPostCollection() as $currentPost) : ?>
+            <li><a href="<?php echo $currentPost->getPostUrl()?>"><?php echo $currentPost->getTitle(); ?></a></li>
+       <?php endforeach; ?>
+       </ul>
+       <a href="<?php echo $block->getShowAllUrl()?>"><?php echo __('Show more.')?></a>
+   </div>
+<?php endif; ?>

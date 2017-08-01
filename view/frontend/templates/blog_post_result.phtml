@@ -1,0 +1,10 @@
+<?php /** @var \Comwrap\ElasticsuiteBlog\Block\Post\Result */  ?>
+<div class="search results">
+    <h2><?php echo __('Results in blog post.')?></h2>
+
+    <ul>
+        <?php foreach ($block->getPostCollection() as $currentPost) : ?>
+            <li><a href="<?php echo $currentPost->getPostUrl()?>"><?php echo $currentPost->getTitle(); ?></a></li>
+        <?php endforeach; ?>
+    </ul>
+</div>

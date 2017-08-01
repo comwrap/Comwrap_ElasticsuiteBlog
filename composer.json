@@ -1,0 +1,35 @@
+{
+    "name": "comwrap/module-elasticsuite-blog-search",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": ["OSL-3.0",  "AFL-3.0"],
+    "description": "Comwrap Elasticsuite - Blog Post Search Module for Smile Elasticsuite.",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "ssh://git@gitlab.comwrap.eu:Magento_2/Comwrap_ElasticsuiteBlog.git"
+        }
+    ],
+    "require": {
+        "php": "~5.5.0|~5.6.0|~7.0.0",
+        "magento/framework": ">=100.1.0",
+        "magento/module-store": ">=100.1.0",
+        "magento/module-backend": ">=100.1.0",
+        "magento/module-catalog": ">=100.1.0",
+        "magento/module-catalog-search": ">=100.1.0",
+        "magento/magento-composer-installer": "*",
+        "smile/elasticsuite": ">=2.1",
+        "magefan/module-blog": ">=2.5"
+    },
+    "require-dev": {
+        "smile/magento2-smilelab-quality-suite": "1.0.0"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Comwrap\\ElasticsuiteBlog\\": ""
+        }
+    }
+}
