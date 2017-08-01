@@ -19,7 +19,7 @@
         "magento/module-catalog-search": ">=100.1.0",
         "magento/magento-composer-installer": "*",
         "smile/elasticsuite": ">=2.1",
-        "magefan/module-blog": ">=2.5"
+        "magefan/module-blog": "dev-aboshop"
     },
     "require-dev": {
         "smile/magento2-smilelab-quality-suite": "1.0.0"
