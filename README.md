@@ -1,7 +1,7 @@
-## ElasticSuite Blog search for MageFun_Blog
+## ElasticSuite Blog search for MageFan_Blog
 
 
-This module connecting between each other [ElasticSuite](https://github.com/Smile-SA/elasticsuite) search extension and MageFun Blog extension for Magento 2 (https://magefan.com/magento2-blog-extension , https://github.com/magefan/module-blog)
+This module connecting between each other [ElasticSuite](https://github.com/Smile-SA/elasticsuite) search extension and MageFan Blog extension for Magento 2 (https://magefan.com/magento2-blog-extension , https://github.com/magefan/module-blog)
 
 It allows to index Blog posts into the search engine and display them into the autocomplete results, and also on the search result page.
 
@@ -10,7 +10,7 @@ It allows to index Blog posts into the search engine and display them into the a
 The module requires :
 
 - [ElasticSuite](https://github.com/Smile-SA/elasticsuite) > 2.1.*
-- [MageFunBlog](https://github.com/magefan/module-blog)
+- [MageFanBlog](https://github.com/magefan/module-blog)
 
 ### How to use
 
