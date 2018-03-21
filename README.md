@@ -1,6 +1,7 @@
-## Comwrap Blog Posts Search
+## ElasticSuite Blog search for MageFun_Blog
 
-This module is a plugin for [ElasticSuite](https://github.com/Smile-SA/elasticsuite).
+
+This module connecting between each other [ElasticSuite](https://github.com/Smile-SA/elasticsuite) search extension and MageFun Blog extension for Magento 2 (https://magefan.com/magento2-blog-extension , https://github.com/magefan/module-blog)
 
 It allows to index Blog posts into the search engine and display them into the autocomplete results, and also on the search result page.
 
@@ -9,6 +10,7 @@ It allows to index Blog posts into the search engine and display them into the a
 The module requires :
 
 - [ElasticSuite](https://github.com/Smile-SA/elasticsuite) > 2.1.*
+- [MageFunBlog](https://github.com/magefan/module-blog)
 
 ### How to use
 
