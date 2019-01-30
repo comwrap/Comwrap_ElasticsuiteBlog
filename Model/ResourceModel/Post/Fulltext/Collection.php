@@ -1,6 +1,7 @@
 <?php
 namespace Comwrap\ElasticsuiteBlog\Model\ResourceModel\Post\Fulltext;
 
+use Magento\Framework\DB\Select;
 use Smile\ElasticsuiteCore\Search\RequestInterface;
 use Smile\ElasticsuiteCore\Search\Request\BucketInterface;
 
