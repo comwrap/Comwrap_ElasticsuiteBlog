@@ -50,7 +50,7 @@ class Fulltext implements ActionInterface, MviewActionInterface
         IndexerInterface $indexerHandler,
         StoreManagerInterface $storeManager,
         DimensionFactory $dimensionFactory,
-        array $data
+        $data = []
     ) {
         $this->fullAction = $fullAction;
         $this->indexerHandler = $indexerHandler;
