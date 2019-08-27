@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="top.search">
+            <arguments>
+                <argument name="rendererList" xsi:type="array">
+                    <item name="blog_post" xsi:type="array">
+                        <item name="title" xsi:type="string">News</item>
+                        <item name="template" xsi:type="string">Comwrap_ElasticsuiteBlog/autocomplete/post</item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+
+    </body>
+</page>

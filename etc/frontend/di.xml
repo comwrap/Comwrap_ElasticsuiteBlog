@@ -3,7 +3,7 @@
     <type name="Magento\Search\Model\Autocomplete">
         <arguments>
             <argument name="dataProviders" xsi:type="array">
-                <item name="30" xsi:type="object">Comwrap\ElasticsuiteBlog\Model\Autocomplete\Post\DataProvider</item>
+                <item name="64" xsi:type="object">Comwrap\ElasticsuiteBlog\Model\Autocomplete\Post\DataProvider</item>
             </argument>
         </arguments>
     </type>

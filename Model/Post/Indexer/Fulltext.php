@@ -15,9 +15,6 @@ class Fulltext implements ActionInterface, MviewActionInterface
      */
     const INDEXER_ID = 'elasticsuite_blog_fulltext';
 
-    /** @var array index structure */
-    protected $data;
-
     /**
      * @var IndexerInterface
      */
@@ -49,14 +46,12 @@ class Fulltext implements ActionInterface, MviewActionInterface
         Full $fullAction,
         IndexerInterface $indexerHandler,
         StoreManagerInterface $storeManager,
-        DimensionFactory $dimensionFactory,
-        array $data
+        DimensionFactory $dimensionFactory
     ) {
         $this->fullAction = $fullAction;
         $this->indexerHandler = $indexerHandler;
         $this->storeManager = $storeManager;
         $this->dimensionFactory = $dimensionFactory;
-        $this->data = $data;
     }
 
     /**
