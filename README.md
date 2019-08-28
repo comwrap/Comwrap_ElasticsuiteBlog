@@ -7,6 +7,8 @@ It allows to index Blog posts into the search engine and display them into the a
 
 ### Requirements
 
+Magento Community Edition 2.1.* or Magento Enterprise Edition 2.1.*
+
 The module requires :
 
 - [ElasticSuite](https://github.com/Smile-SA/elasticsuite) > 2.1.*
