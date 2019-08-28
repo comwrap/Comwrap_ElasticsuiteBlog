@@ -7,12 +7,13 @@ It allows to index Blog posts into the search engine and display them into the a
 
 ### Requirements
 
-* Magento Community Edition 2.3.* or Magento Enterprise Edition 2.3.*
+* For version 1.x.x: Magento Community Edition 2.2.* or Magento Enterprise Edition 2.2.*
+* For version 2.x.x: Magento Community Edition 2.3.* or Magento Enterprise Edition 2.3.*
 
 The module requires :
 
-- [ElasticSuite](https://github.com/Smile-SA/elasticsuite) > 2.1.*
-- [MageFanBlog](https://github.com/magefan/module-blog) > 2.5.*
+- [ElasticSuite](https://github.com/Smile-SA/elasticsuite)
+- [MageFanBlog](https://github.com/magefan/module-blog)
 
 ### How to use
 
