@@ -40,6 +40,66 @@ class Result extends \Magento\Framework\View\Element\Template
     }
 
     /**
+     * Prepare layout
+     *
+     * @return $this
+     */
+    protected function _prepareLayout()
+    {
+        $title = $this->getSearchQueryText();
+        $this->pageConfig->getTitle()->set($title);
+
+        // add Home breadcrumb
+        $breadcrumbs = $this->getLayout()->getBlock('breadcrumbs');
+        if ($breadcrumbs) {
+            $breadcrumbs->addCrumb(
+                'home',
+                [
+                    'label' => __('Home'),
+                    'title' => __('Go to Home Page'),
+                    'link' => $this->_storeManager->getStore()->getBaseUrl()
+                ]
+            )->addCrumb(
+                'search',
+                [
+                	'label' => $title,
+                	'title' => $title,
+                	'link' => $this->getSearchUrl()
+                ]
+            )->addCrumb(
+                'blog_search',
+                [
+                	'label' => __('Results in blog posts.'),
+                	'title' => __('Results in blog posts.')
+                ]
+            );
+        }
+
+        return parent::_prepareLayout();
+    }
+
+    /**
+     * Get search query text
+     *
+     * @return \Magento\Framework\Phrase
+     */
+    public function getSearchQueryText()
+    {
+        return __("Search results for: '%1'", $this->escapeHtml($this->getQueryText()));
+    }
+
+    /**
+     * Returns catalog search url.
+     *
+     * @return string
+     */
+    public function getSearchUrl()
+    {
+	    $params = [QueryFactory::QUERY_VAR_NAME => $this->getQueryText()];
+        return $this->getUrl('catalogsearch/result', ['_query' => $params]);
+    }
+
+    /**
      * Returns blog bost collection.
      *
      * @return \Comwrap\ElasticsuiteBlog\Model\ResourceModel\Post\Fulltext\Collection
