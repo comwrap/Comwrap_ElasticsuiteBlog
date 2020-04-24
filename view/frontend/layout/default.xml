@@ -7,7 +7,7 @@
             <arguments>
                 <argument name="rendererList" xsi:type="array">
                     <item name="blog_post" xsi:type="array">
-                        <item name="title" xsi:type="string">News</item>
+                        <item name="title" xsi:type="string" translate="true">News</item>
                         <item name="template" xsi:type="string">Comwrap_ElasticsuiteBlog/autocomplete/post</item>
                     </item>
                 </argument>
