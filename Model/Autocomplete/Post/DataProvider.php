@@ -110,18 +110,20 @@ class DataProvider implements DataProviderInterface
     public function getItems()
     {
         $result = [];
-        $postCollection = $this->getBlogPostCollection();
-        $i = 0;
-        if ($postCollection) {
-            /** @var \Magefan\Blog\Model\Post $post */
-            foreach ($postCollection as $post) {
-                $result[] = $this->itemFactory->create([
-                        'title' => $post->getTitle(),
-                        'url'   => $post->getPostUrl(),
-                        'type' => $this->getType()]);
-                $i++;
-                if ($i == $this->maxAutocompleteResults) {
-                    break;
+        if ($this->configurationHelper->isEnabled($this->getType())) {
+            $postCollection = $this->getBlogPostCollection();
+            $i = 0;
+            if ($postCollection) {
+                /** @var \Magefan\Blog\Model\Post $post */
+                foreach ($postCollection as $post) {
+                    $result[] = $this->itemFactory->create([
+                            'title' => $post->getTitle(),
+                            'url'   => $post->getPostUrl(),
+                            'type' => $this->getType()]);
+                    $i++;
+                    if ($i == $this->maxAutocompleteResults) {
+                        break;
+                    }
                 }
             }
         }
