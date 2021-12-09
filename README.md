@@ -1,3 +1,7 @@
+# Extension is not acvitely maintaining.
+If you need the module and want to maintain the repo, please drop me a message. 
+Twitter: @nuzil
+
 ## ElasticSuite Blog search for Magefan Magento 2 Blog
 
 
