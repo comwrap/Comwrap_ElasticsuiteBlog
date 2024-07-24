@@ -52,7 +52,8 @@ class Full extends AbstractIndexer
         }
 
         $select->where('p.post_id > ?', $fromId)
-               ->where('p.is_searchable = ?', true)
+               ->where('p.is_searchable = ?', 1)
+               ->where('p.is_active = ?', 1)
                ->limit($limit)
                ->order('p.post_id');
 
