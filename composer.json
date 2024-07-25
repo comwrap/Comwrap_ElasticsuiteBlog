@@ -1,5 +1,5 @@
 {
-    "name": "comwrap/module-elasticsuite-blog-search",
+    "name": "comwrap/comwrap_elasticsuiteblog",
     "type": "magento2-module",
     "license": ["OSL-3.0",  "AFL-3.0"],
     "description": "Comwrap Elasticsuite - Blog Post Search Module for Smile Elasticsuite.",
