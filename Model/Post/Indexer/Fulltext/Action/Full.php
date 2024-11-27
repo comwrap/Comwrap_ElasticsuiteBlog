@@ -1,8 +1,12 @@
 <?php
 namespace Comwrap\ElasticsuiteBlog\Model\Post\Indexer\Fulltext\Action;
 
+use Magento\Framework\Filter\RemoveTags;
 use Comwrap\ElasticsuiteBlog\Model\ResourceModel\Post\Indexer\Fulltext\Action\Full as ResourceModel;
 use Magento\Cms\Model\Template\FilterProvider;
+use Magento\Framework\App\Area;
+use Magento\Framework\App\AreaList;
+use Magento\Store\Model\App\Emulation;
 
 class Full
 {
@@ -17,15 +21,33 @@ class Full
     private $filterProvider;
 
     /**
+     * @var \Magento\Framework\App\AreaList
+     */
+    private $areaList;
+
+    /**
+     * @var \Magento\Framework\Filter\RemoveTags
+     */
+    private $stripTags;
+
+    /**
      * Constructor.
      *
      * @param ResourceModel  $resourceModel  Indexer resource model.
      * @param FilterProvider $filterProvider Model template filter provider.
+     * @param AreaList       $areaList       Area List
+     * @param RemoveTags     $stripTags      HTML Tags remover
      */
-    public function __construct(ResourceModel $resourceModel, FilterProvider $filterProvider)
-    {
+    public function __construct(
+        ResourceModel $resourceModel,
+        FilterProvider $filterProvider,
+        AreaList $areaList,
+        RemoveTags $stripTags
+    ) {
         $this->resourceModel  = $resourceModel;
         $this->filterProvider = $filterProvider;
+        $this->areaList = $areaList;
+        $this->stripTags = $stripTags;
     }
 
     /**
@@ -39,6 +61,13 @@ class Full
     public function rebuildStoreIndex($storeId, $blogPostIds = null)
     {
         $lastBlogPostId  = 0;
+
+        try {
+            $this->areaList->getArea(Area::AREA_FRONTEND)->load(Area::PART_DESIGN);
+        } catch (\InvalidArgumentException | \LogicException $exception) {
+            // Can occur especially when magento sample data are triggering a full reindex.
+            ;
+        }
 
         do {
             $blogPosts = $this->getSearchableBlogPost($storeId, $blogPostIds, $lastBlogPostId);
@@ -75,9 +104,11 @@ class Full
     private function processPostData($postData)
     {
         if (isset($postData['content'])) {
-            $postData['content'] = $this->filterProvider->getPageFilter()->filter($postData['content']);
+            $content = html_entity_decode($this->filterProvider->getPageFilter()->filter($postData['content']));
+            $content = $this->stripTags->filter($content);
+            $content = preg_replace('/\s\s+/', ' ', $content);
+            $postData['content'] = $content;
         }
-
         return $postData;
     }
 }
