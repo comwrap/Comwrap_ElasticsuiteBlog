@@ -149,6 +149,7 @@ class Result extends \Magento\Framework\View\Element\Template
     private function initPostCollection($collectionFactory)
     {
         $postCollection = $collectionFactory->create();
+	$postCollection->addFieldToFilter('is_active', 1);
 
         $queryText = $this->getQueryText();
         $postCollection->addSearchFilter($queryText);
