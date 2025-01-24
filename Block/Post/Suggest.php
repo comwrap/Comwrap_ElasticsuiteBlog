@@ -134,7 +134,8 @@ class Suggest extends \Magento\Framework\View\Element\Template
     private function initPostCollection($collectionFactory)
     {
         $postCollection = $collectionFactory->create();
-
+        $postCollection->addFieldToFilter('is_active', 1);
+        
         $postCollection->setPageSize($this->getNumberOfResults());
 
         $queryText = $this->getQueryText();
