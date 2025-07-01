@@ -14,6 +14,7 @@
                     <isSearchable>1</isSearchable>
                     <isUsedInSpellcheck>1</isUsedInSpellcheck>
                 </field>
+		<field name="is_active" type="integer" />
             </mapping>
         </type>
     </index>
